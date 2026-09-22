@@ -114,10 +114,10 @@ body {
 }
 section { margin-bottom: 2.5rem; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .card {
@@ -126,9 +126,12 @@ section { margin-bottom: 2.5rem; }
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem;
+  padding: 0.8rem 1.1rem;
   align-items: center;
+  transition: border-color 0.15s ease;
 }
+
+.card:hover { border-color: var(--mint); }
 
 .card-date {
   display: flex;

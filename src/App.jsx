@@ -142,7 +142,7 @@ export default function App() {
           {upcoming.length === 0 ? (
             <p className="empty">No upcoming games for this filter.</p>
           ) : (
-            <div className="grid">
+            <div className="list">
               {upcoming.map((g) => (
                 <UpcomingCard key={g.id} game={g} />
               ))}
@@ -155,7 +155,7 @@ export default function App() {
           {finals.length === 0 ? (
             <p className="empty">No results yet for this filter.</p>
           ) : (
-            <div className="grid">
+            <div className="list">
               {finals.map((g) => (
                 <FinalCard key={g.id} game={g} />
               ))}
