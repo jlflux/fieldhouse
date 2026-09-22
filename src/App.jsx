@@ -40,12 +40,11 @@ function UpcomingCard({ game }) {
         <h3 className="card-title">
           {SCHOOL.mascot} <span className="vs">vs</span> {game.opponent}
         </h3>
-        <div className="card-sub">
-          <span>{fmtTime(game.date)}</span>
-          <span className="dot">·</span>
-          <span>{game.venue}</span>
-          <span className={`ha ha-${game.homeAway.toLowerCase()}`}>{game.homeAway}</span>
-        </div>
+      </div>
+      <div className="card-right">
+        <span className="card-time">{fmtTime(game.date)}</span>
+        <span className="card-venue">{game.venue}</span>
+        <span className={`ha ha-${game.homeAway.toLowerCase()}`}>{game.homeAway}</span>
       </div>
     </article>
   )
@@ -66,23 +65,21 @@ function FinalCard({ game }) {
         <h3 className="card-title">
           {SCHOOL.mascot} <span className="vs">vs</span> {game.opponent}
         </h3>
-        <div className="card-sub">
-          {game.scoreUs != null ? (
-            <span className="score">
-              {game.scoreUs} – {game.scoreThem}
-              <span className="final-tag">Final</span>
-            </span>
-          ) : (
-            <span className="score">
-              {game.placementUs}
-              {game.placementUs === 2 ? 'nd' : game.placementUs === 3 ? 'rd' : 'th'} of{' '}
-              {game.fieldSize}
-              <span className="final-tag">Final</span>
-            </span>
-          )}
-          <span className="dot">·</span>
-          <span>{fmtDate(game.date)}</span>
-        </div>
+      </div>
+      <div className="card-right">
+        {game.scoreUs != null ? (
+          <span className="score">
+            {game.scoreUs} – {game.scoreThem}
+          </span>
+        ) : (
+          <span className="score">
+            {game.placementUs}
+            {game.placementUs === 2 ? 'nd' : game.placementUs === 3 ? 'rd' : 'th'} of{' '}
+            {game.fieldSize}
+          </span>
+        )}
+        <span className="final-tag">Final</span>
+        <span>{fmtDate(game.date)}</span>
       </div>
     </article>
   )
