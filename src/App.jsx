@@ -38,7 +38,7 @@ function UpcomingCard({ game }) {
           <span className="level">{game.level}</span>
         </div>
         <h3 className="card-title">
-          {SCHOOL.mascot} <span className="vs">vs</span> {game.opponent}
+          {game.opponent}
         </h3>
       </div>
       <div className="card-right">
@@ -63,7 +63,7 @@ function FinalCard({ game }) {
           <span className="level">{game.level}</span>
         </div>
         <h3 className="card-title">
-          {SCHOOL.mascot} <span className="vs">vs</span> {game.opponent}
+          {game.opponent}
         </h3>
       </div>
       <div className="card-right">
